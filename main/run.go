@@ -80,6 +80,7 @@ func executeRun(cmd *base.Command, args []string) {
 
 	// Explicitly triggering GC to remove garbage from config loading.
 	runtime.GC()
+	debug.FreeOSMemory()
 
 	{
 		osSignals := make(chan os.Signal, 1)
